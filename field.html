@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แปลงนา - ต้นทุนการปลูกข้าว</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="app-header">
+            <h1>จัดการแปลงนา</h1>
+            <button
+                class="menu-btn"
+                type="button"
+                onclick="toggleMenu()"
+                aria-label="เปิดเมนู">
+                ☰ เมนู
+            </button>
+            <nav id="appNav" class="app-nav">
+                <a class="active" href="index.html">รายการ</a>
+                <a href="field.html">แปลงนา</a>
+                <a href="field-summary.html">สรุปแปลง</a>
+                <a href="asset.html">ทรัพย์สิน</a>
+                <a href="dashboard.html">แดชบอร์ด</a>
+                <a href="settings.html">ตั้งค่า</a>
+            </nav>
+        </header>
+
+        <section class="card">
+            <h2>เพิ่มแปลงนา</h2>
+
+            <label for="fieldName">ชื่อแปลงนา</label>
+            <input
+                type="text"
+                id="fieldName"
+                placeholder="เช่น นาหลังบ้าน"
+            >
+
+            <label for="fieldArea">พื้นที่ (ไร่)</label>
+            <input
+                type="number"
+                id="fieldArea"
+                placeholder="เช่น 10"
+            >
+
+            <label for="fieldLocation">ที่ตั้ง</label>
+            <input
+                type="text"
+                id="fieldLocation"
+                placeholder="เช่น บ้านหนองแดง"
+            >
+<label for="riceVariety">พันธุ์ข้าว</label>
+<input
+    type="text"
+    id="riceVariety"
+    placeholder="เช่น กข43"
+/>
+
+<label for="sowingDate">วันที่หว่านเมล็ด</label>
+<input
+    type="date"
+    id="sowingDate"
+/>
+
+<label for="expectedHarvestDate">
+    วันที่คาดว่าจะเก็บเกี่ยว
+</label>
+<input
+    type="date"
+    id="expectedHarvestDate"
+/>
+<label for="seedUsedKg">
+    เมล็ดพันธุ์ที่ใช้ (กก.)
+</label>
+
+<input
+    type="number"
+    id="seedUsedKg"
+    placeholder="เช่น 30"
+/>
+
+<label for="harvestYieldKg">
+    ผลผลิตที่ได้ (กก.)
+</label>
+
+<input
+    type="number"
+    id="harvestYieldKg"
+    placeholder="เช่น 8500"
+/>
+<label for="fieldNote">หมายเหตุ</label>
+<textarea
+    id="fieldNote"
+    rows="3"
+></textarea>
+
+            <button
+                id="fieldSaveBtn"
+                class="main-btn"
+                onclick="saveField()">
+                เพิ่มแปลงนา
+            </button>
+        </section>
+
+        <section class="card">
+            <h2>รายการแปลงนา</h2>
+            <ul id="fieldList" class="item-list"></ul>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>

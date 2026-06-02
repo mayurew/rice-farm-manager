@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทรัพย์สิน - ต้นทุนการปลูกข้าว</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="app-header">
+            <h1>ทรัพย์สินฟาร์ม</h1>
+            <button
+                class="menu-btn"
+                type="button"
+                onclick="toggleMenu()"
+                aria-label="เปิดเมนู">
+                ☰ เมนู
+            </button>
+                        <nav id="appNav" class="app-nav">
+                <a class="active" href="index.html">รายการ</a>
+                <a href="field.html">แปลงนา</a>
+                <a href="field-summary.html">สรุปแปลง</a>
+                <a href="asset.html">ทรัพย์สิน</a>
+                <a href="dashboard.html">แดชบอร์ด</a>
+                <a href="settings.html">ตั้งค่า</a>
+            </nav>
+        </header>
+
+        <section class="card">
+            <h2>รายการทรัพย์สิน</h2>
+            <ul id="assetList" class="item-list"></ul>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>

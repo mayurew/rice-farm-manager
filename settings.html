@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ตั้งค่า</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="app-header">
+
+            <h1>ตั้งค่าใช้งาน</h1>
+
+            <button
+                class="menu-btn"
+                type="button"
+                onclick="toggleMenu()"
+                aria-label="เปิดเมนู">
+
+                ☰ เมนู
+
+            </button>
+
+            <nav id="appNav" class="app-nav">
+
+                <a href="index.html">รายการ</a>
+
+                <a href="field.html">แปลงนา</a>
+
+                <a href="field-summary.html">สรุปแปลง</a>
+
+                <a href="asset.html">ทรัพย์สิน</a>
+
+                <a href="dashboard.html">แดชบอร์ด</a>
+
+                <a class="active" href="settings.html">
+                    ตั้งค่า
+                </a>
+
+            </nav>
+
+        </header>
+
+        <div class="card">
+
+            <h2>💾 สำรองข้อมูล</h2>
+
+                 <p> ดาวน์โหลดข้อมูลทั้งหมดเก็บไว้ในเครื่อง</p>
+
+            <h2>📊 สถานะข้อมูล</h2>
+
+                <p>จำนวนแปลงนา : <span id="fieldCount">0</span></p>
+                 <p>จำนวนธุรกรรม : <span id="expenses">0</span></p>
+                 <p>จำนวนทรัพย์สิน : <span id="assetCount">0</span></p>
+                 <p>ขนาดข้อมูล : <span id="storageSize">0 KB</span></p>
+                 <p>สำรองล่าสุด : <span id="lastBackup">-</span></p>
+
+            <button
+                class="main-btn"
+                onclick="backupFarmData()">
+
+                ดาวน์โหลด Backup
+
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📥 กู้คืนข้อมูล</h2>
+
+            <p>
+                เลือกไฟล์ Backup (.json)
+            </p>
+
+            <input
+                type="file"
+                id="restoreFile"
+                accept=".json">
+
+            <br><br>
+
+            <button
+                class="main-btn"
+                onclick="restoreFarmData()">
+
+                Restore ข้อมูล
+
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🗑️ ล้างข้อมูลทั้งหมด</h2>
+
+            <p>
+                คำเตือน: การล้างข้อมูลไม่สามารถย้อนกลับได้
+            </p>
+
+            <button
+                class="danger-btn"
+                onclick="clearAllData()">
+
+                ล้างข้อมูลทั้งหมด
+
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>ℹ️ เกี่ยวกับแอป</h2>
+
+            <p>Rice Farm Manager</p>
+
+            <p>Version 1.0</p>
+
+            <p>ระบบจัดการต้นทุนการปลูกข้าว</p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/pwa.js"></script>
+</body>
+
+</html>

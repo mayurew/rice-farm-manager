@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+    <div class="container">
+
+         class="app-header">
+            <h1>💾 สำรองข้อมูล</h1>
+            <button
+                class="menu-btn"
+                type="button"
+                onclick="toggleMenu()"
+                aria-label="เปิดเมนู">
+                ☰ เมนู
+            </button>
+            <nav id="appNav" class="app-nav">
+                <a href="index.html">รายการ</a>
+                <a class="active" href="field.html">แปลงนา</a>
+                <a href="field-summary.html">สรุปแปลง</a>
+                <a href="asset.html">ทรัพย์สิน</a>
+                <a href="dashboard.html">แดชบอร์ด</a>
+                <a href="settings.html">ตั้งค่า</a>
+            </nav>
+       
+
+        <div class="container">
+<title>สำรองข้อมูล</title>
+<div class="card">
+
+<h2>สำรองข้อมูลทั้งหมด</h2>
+
+<button
+    class="main-btn"
+    onclick="backupFarmData()">
+
+    ดาวน์โหลด Backup
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>กู้คืนข้อมูล</h2>
+
+<input
+    type="file"
+    id="restoreFile"
+    accept=".json">
+
+<button
+    class="main-btn"
+    onclick="restoreFarmData()">
+
+    Restore
+
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="js/setting.js"></script>
+<script src="js/pwa.js"></script>
+
+</body>
+</html>

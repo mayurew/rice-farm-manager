@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แดชบอร์ด - ต้นทุนการปลูกข้าว</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="app-header">
+            <h1>แดชบอร์ดฟาร์ม</h1>
+            <button class="menu-btn" type="button" onclick="toggleMenu()" aria-label="เปิดเมนู">
+                ☰ เมนู
+            </button>
+            <nav id="appNav" class="app-nav">
+                <a class="active" href="index.html">รายการ</a>
+                <a href="field.html">แปลงนา</a>
+                <a href="field-summary.html">สรุปแปลง</a>
+                <a href="asset.html">ทรัพย์สิน</a>
+                <a href="dashboard.html">แดชบอร์ด</a>
+                <a href="settings.html">ตั้งค่า</a>
+            </nav>
+        </header>
+
+        <section class="dashboard-grid">
+            <div class="metric-card">
+                <span>จำนวนแปลงนา</span>
+                <strong id="dashboardFieldCount">0</strong>
+            </div>
+            <div class="metric-card">
+                <span>พื้นที่รวม</span>
+                <strong><span id="dashboardArea">0</span> ไร่</strong>
+            </div>
+            <div class="metric-card">
+                <span>Field Costs</span>
+                <strong><span id="dashboardFieldCosts">0</span> บาท</strong>
+            </div>
+            <div class="metric-card">
+                <span>Income</span>
+                <strong><span id="dashboardIncome">0</span> บาท</strong>
+            </div>
+            <div class="metric-card">
+                <span>Overhead Costs</span>
+                <strong><span id="dashboardOverheads">0</span> บาท</strong>
+            </div>
+            <div class="metric-card">
+                <span>Asset Value</span>
+                <strong><span id="dashboardAssets">0</span> บาท</strong>
+            </div>
+            <div class="metric-card wide">
+                <span>Farm Total Investment</span>
+                <strong><span id="dashboardInvestment">0</span> บาท</strong>
+            </div>
+            <div class="metric-card wide profit-card">
+                <span>Farm Profit</span>
+                <strong><span id="dashboardProfit">0</span> บาท</strong>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>สัดส่วนต้นทุนรวมทั้งฟาร์ม</h2>
+            <div id="dashboardPieChart"></div>
+        </section>
+
+        <section class="card">
+            <h2>สัดส่วนรายรับตามหมวด</h2>
+            <div id="dashboardIncomePieChart"></div>
+        </section>
+
+        <section class="card">
+            <h2>สัดส่วนรายจ่ายตามหมวด</h2>
+            <div id="dashboardExpensePieChart"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>

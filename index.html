@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกรายการ - ต้นทุนการปลูกข้าว</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2e7d32">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="app-header">
+            <h1>ต้นทุนการปลูกข้าว</h1>
+            <button class="menu-btn" type="button" onclick="toggleMenu()" aria-label="เปิดเมนู">
+                ☰ เมนู
+            </button>
+            <nav id="appNav" class="app-nav">
+                <a class="active" href="index.html">รายการ</a>
+                <a href="field.html">แปลงนา</a>
+                <a href="field-summary.html">สรุปแปลง</a>
+                <a href="asset.html">ทรัพย์สิน</a>
+                <a href="dashboard.html">แดชบอร์ด</a>
+                <a href="settings.html">ตั้งค่า</a>
+            </nav>
+        </header>
+
+        <section class="card">
+            <h2>เพิ่มรายการ</h2>
+
+            <div class="group-selector">
+                <button id="fieldCostBtn" class="group-btn active-group" onclick="setTransactionGroup('field_cost')">
+                    ต้นทุนแปลงนา
+                </button>
+                <button id="incomeBtn" class="group-btn" onclick="setTransactionGroup('income')">
+                    รายรับ
+                </button>
+                <button id="overheadBtn" class="group-btn" onclick="setTransactionGroup('overhead')">
+                    ค่าใช้จ่ายส่วนกลาง
+                </button>
+                <button id="assetBtn" class="group-btn" onclick="setTransactionGroup('asset')">
+                    ทรัพย์สิน
+                </button>
+            </div>
+
+            <div id="fieldGroup" class="form-block">
+                <label for="fieldSelect">แปลงนา</label>
+                <select id="fieldSelect"></select>
+                <p id="fieldHint" class="hint"></p>
+            </div>
+
+            <div id="categoryGroup" class="form-block">
+                <label for="categorySelect">หมวดหมู่</label>
+                <select id="categorySelect" onchange="setCategory(this.value)"></select>
+            </div>
+
+            <label id="nameLabel" for="itemName">ชื่อรายการ</label>
+            <input type="text" id="itemName" placeholder="เช่น ปุ๋ยยูเรีย">
+
+            <div id="quantityGroup" class="form-grid">
+                <div>
+                    <label for="itemQuantity">จำนวน</label>
+                    <input type="number" id="itemQuantity" placeholder="เช่น 5">
+                </div>
+                <div>
+                    <label for="itemUnit">หน่วย</label>
+                    <input type="text" id="itemUnit" placeholder="เช่น กระสอบ">
+                </div>
+            </div>
+
+            <label id="amountLabel" for="itemAmount">จำนวนเงิน</label>
+            <input type="number" id="itemAmount" placeholder="เช่น 9000">
+
+            <div id="usefulLifeGroup" class="form-block hidden">
+                <label for="usefulLifeYears">อายุใช้งาน (ปี)</label>
+                <input type="number" id="usefulLifeYears" placeholder="เช่น 5">
+            </div>
+
+            <button id="saveBtn" class="main-btn" onclick="saveTransaction()">
+                เพิ่มรายการ
+            </button>
+        </section>
+
+        <section class="">
+            <h2>รายการล่าสุด</h2>
+            <ul id="transactionList" class="item-list"></ul>
+        </section>
+
+        <section class="card total">
+            <h2>รายรับรวม: <span id="incomeTotal">0</span> บาท</h2>
+            <h2>ต้นทุนแปลงนา: <span id="fieldCostTotal">0</span> บาท</h2>
+            <h2>ค่าใช้จ่ายส่วนกลาง: <span id="overheadTotal">0</span> บาท</h2>
+            <h2>มูลค่าทรัพย์สิน: <span id="assetTotal">0</span> บาท</h2>
+            <h2>กำไรจากแปลงนา: <span id="farmProfitTotal">0</span> บาท</h2>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/pwa.js"></script>
+
+</body>
+</html>
