@@ -1,5 +1,5 @@
 # rice-farm-manager
-Rice Farm Manager
+
 ระบบจัดการต้นทุนการปลูกข้าว
 
 - จัดการแปลงนา
