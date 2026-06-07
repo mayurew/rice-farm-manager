@@ -1,3 +1,6 @@
+console.log("SCRIPT VERSION 999");
+
+
 const transactionGroups = [
     { id: "field_cost", label: "ต้นทุนแปลงนา" },
     { id: "income", label: "รายรับ" },
